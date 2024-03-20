@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../navigation/screen_tab.dart';
+import '../../navigation/screen_tab.dart';
 
-class GasScreen extends StatelessWidget {
-  const GasScreen({
+class EffectScreen extends StatelessWidget {
+  const EffectScreen({
     super.key,
     required this.selectedTab,
   });

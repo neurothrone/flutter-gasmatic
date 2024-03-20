@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../about/about_screen.dart';
-import '../effect/effect_screen.dart';
-import '../gas/gas_screen.dart';
-import '../settings/settings_screen.dart';
+import '../features/about/about_screen.dart';
+import '../features/effect/effect_screen.dart';
+import '../features/gas/gas_screen.dart';
+import '../features/settings/settings_screen.dart';
 import 'app_drawer.dart';
 import 'screen.dart';
 import 'screen_tab.dart';
