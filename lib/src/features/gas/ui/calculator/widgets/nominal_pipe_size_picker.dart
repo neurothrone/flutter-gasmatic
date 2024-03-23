@@ -75,7 +75,7 @@ class _NominalPipeSizePickerState extends State<NominalPipeSizePicker> {
             color: AppConstants.darkGold,
           ),
         ),
-        labelText: "Nominal Pipe Size - DN (mm)".toLocalize,
+        labelText: AppLocalizations.of(context).nps_label,
         labelStyle: const TextStyle(
           color: Colors.grey,
           fontSize: 20.0,

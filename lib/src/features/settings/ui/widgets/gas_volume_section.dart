@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../../core/constants/constants.dart';
 import '../../../../services/providers.dart';
 import '../../../../shared/widgets/widgets.dart';
 
@@ -13,9 +14,9 @@ class GasVolumeSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text(
-          "Gas Volume",
-          style: TextStyle(
+        Text(
+          AppLocalizations.of(context).gas_volume_title,
+          style: const TextStyle(
             color: Colors.white70,
             fontWeight: FontWeight.bold,
           ),
@@ -24,8 +25,8 @@ class GasVolumeSection extends StatelessWidget {
         Consumer(builder: (_, WidgetRef ref, __) {
           return CustomListTile(
             onPressed: ref.read(launcherServiceProvider).launchNpsWebLink,
-            title: "Learn more about NPS standards",
-            subtitle: "This will open a browser",
+            title: AppLocalizations.of(context).nps_standards_title,
+            subtitle: AppLocalizations.of(context).nps_standards_subtitle,
           );
         }),
       ],

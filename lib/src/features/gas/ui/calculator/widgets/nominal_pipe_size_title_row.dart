@@ -16,19 +16,19 @@ class NominalPipeSizeTitleRow extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        const Column(
+        Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "NPS",
-              style: TextStyle(
+              AppLocalizations.of(context).nps,
+              style: const TextStyle(
                 color: Colors.white70,
                 fontSize: 16.0,
               ),
             ),
             Text(
-              "DN",
-              style: TextStyle(
+              AppLocalizations.of(context).dn,
+              style: const TextStyle(
                 color: Colors.white70,
                 fontSize: 16.0,
               ),

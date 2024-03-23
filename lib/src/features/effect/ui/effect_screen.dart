@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../core/constants/constants.dart';
 import '../../../navigation/data/navigation_state.dart';
 import '../../../navigation/data/providers.dart';
+import '../../../navigation/domain/domain.dart';
 import '../../../navigation/widgets/widgets.dart';
 import 'calculator/widgets/widgets.dart';
 
@@ -12,7 +14,7 @@ class EffectScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final NavigationState navigationState = ref.watch(
+    final NavigationState state = ref.watch(
       navigationControllerProvider,
     );
 
@@ -20,13 +22,15 @@ class EffectScreen extends ConsumerWidget {
       appBar: const CustomAppBar(),
       drawer: const AppDrawer(),
       bottomNavigationBar: const CustomNavigationBar(),
-      floatingActionButton: const EffectFloatingCalculateButton(),
+      floatingActionButton: state.selectedEffectTab == ScreenTab.calculator
+          ? const EffectFloatingCalculateButton()
+          : null,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: IndexedStack(
-        index: navigationState.selectedEffectTab.index,
-        children: const [
-          Center(child: Text("Effect Calculator")),
-          Center(child: Text("Effect History")),
+        index: state.selectedEffectTab.index,
+        children: [
+          Center(child: Text(AppLocalizations.of(context).calculator_tab)),
+          Center(child: Text(AppLocalizations.of(context).history_tab)),
         ],
       ),
     );

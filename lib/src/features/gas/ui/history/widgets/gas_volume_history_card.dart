@@ -30,27 +30,27 @@ class GasVolumeHistoryCard extends StatelessWidget {
         child: Column(
           children: [
             GasVolumeHistoryCardRow(
-              leftText: "NPS".toLocalize,
+              leftText: AppLocalizations.of(context).nps,
               rightText: calculation.nominalPipeSize.label,
             ),
             const SizedBox(height: AppSizes.s4),
             GasVolumeHistoryCardRow(
-              leftText: "Length".toLocalize,
+              leftText: AppLocalizations.of(context).length,
               rightText: calculation.length.toString(),
             ),
             const SizedBox(height: AppSizes.s4),
             GasVolumeHistoryCardRow(
-              leftText: "Pressure".toLocalize,
+              leftText: AppLocalizations.of(context).pressure,
               rightText: calculation.pressure.toString(),
             ),
             const SizedBox(height: AppSizes.s4),
             GasVolumeHistoryCardRow(
-              leftText: "Gas Volume".toLocalize,
+              leftText: AppLocalizations.of(context).gas_volume_title,
               rightText: calculation.gasVolume.toString(),
             ),
             const SizedBox(height: AppSizes.s4),
             GasVolumeHistoryCardRow(
-              leftText: "Calculated at".toLocalize,
+              leftText: AppLocalizations.of(context).calculated_date,
               rightText: calculation.calculatedAt.formatted,
               isProminent: false,
             ),

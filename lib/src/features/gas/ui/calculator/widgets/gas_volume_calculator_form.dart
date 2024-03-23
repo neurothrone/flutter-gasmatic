@@ -73,8 +73,8 @@ class _GasVolumeCalculateFormState
             controller: _lengthController,
             onChanged: _formController.changeLengthString,
             onClear: () => _formController.changeLengthString(""),
-            labelText: "Length (m)".toLocalize,
-            hintText: "Enter length in meters".toLocalize,
+            labelText: AppLocalizations.of(context).length_label,
+            hintText: AppLocalizations.of(context).length_placeholder,
             keyboardType: const TextInputType.numberWithOptions(
               signed: false,
               decimal: true,
@@ -88,7 +88,7 @@ class _GasVolumeCalculateFormState
           ),
           const SizedBox(height: AppSizes.s20),
           SwitchListTile(
-            title: Text("Use Custom Pressure?".toLocalize),
+            title: Text(AppLocalizations.of(context).custom_pressure_switch),
             secondary: const Icon(CupertinoIcons.gauge),
             activeTrackColor: AppConstants.darkerGold,
             shape: RoundedRectangleBorder(
@@ -107,8 +107,8 @@ class _GasVolumeCalculateFormState
               controller: _pressureController,
               onChanged: _formController.changePressureString,
               onClear: () => _formController.changePressureString(""),
-              labelText: "Pressure (mbar)".toLocalize,
-              hintText: "Enter pressure in mbar".toLocalize,
+              labelText: AppLocalizations.of(context).pressure_label,
+              hintText: AppLocalizations.of(context).pressure_placeholder,
               keyboardType: const TextInputType.numberWithOptions(
                 signed: false,
                 decimal: true,

@@ -8,9 +8,12 @@ import 'features/about/about_screen.dart';
 import 'features/effect/ui/effect_screen.dart';
 import 'features/gas/ui/gas_screen.dart';
 import 'features/settings/settings_screen.dart';
+import 'localization/data/localization_controller.dart';
+import 'localization/data/localization_state.dart';
+import 'localization/providers.dart';
 import 'navigation/data/navigation_state.dart';
 import 'navigation/data/providers.dart';
-import 'navigation/domain/screen.dart';
+import 'navigation/domain/domain.dart';
 
 class App extends ConsumerWidget {
   const App({super.key});
@@ -20,10 +23,28 @@ class App extends ConsumerWidget {
     final NavigationState navigationState = ref.watch(
       navigationControllerProvider,
     );
+    final LocalizationState localizationState = ref.watch(
+      localizationStateProvider,
+    );
+    final LocalizationController localizationController = ref.read(
+      localizationStateProvider.notifier,
+    );
 
     return MaterialApp(
       title: AppConstants.appTitle,
       debugShowCheckedModeBanner: false,
+      localeResolutionCallback: (locale, supportedLocales) {
+        for (final supportedLocale in supportedLocales) {
+          if (supportedLocale.languageCode == locale?.languageCode) {
+            return supportedLocale;
+          }
+        }
+
+        return supportedLocales.first;
+      },
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: localizationController.supportedLocales,
+      locale: localizationState.currentLocale,
       theme: AppTheme.theme,
       home: AnimatedSwitcher(
         duration: const Duration(milliseconds: AppConstants.animationDuration),

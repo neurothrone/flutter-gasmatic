@@ -1,11 +1,13 @@
 import 'package:flutter/widgets.dart';
 
+import 'domain.dart';
+
 class DrawerItem {
   DrawerItem({
-    required this.title,
+    required this.screen,
     required this.icon,
   });
 
-  final String title;
+  final Screen screen;
   final IconData icon;
 }

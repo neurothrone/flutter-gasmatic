@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../core/constants/constants.dart';
+
 enum ScreenTab {
   calculator,
   history;
@@ -12,5 +14,10 @@ enum ScreenTab {
   IconData get icon => switch (this) {
         calculator => Icons.calculate_rounded,
         history => Icons.work_history_rounded,
+      };
+
+  String localizedTitle(BuildContext context) => switch (index) {
+        0 => AppLocalizations.of(context).calculator_tab,
+        _ => AppLocalizations.of(context).history_tab,
       };
 }

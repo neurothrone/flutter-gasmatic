@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../../core/constants/constants.dart';
-import '../../../../../core/utils/utils.dart';
 import '../../../data/providers.dart';
 
 class GasVolumeResult extends StatelessWidget {
@@ -25,7 +24,7 @@ class GasVolumeResult extends StatelessWidget {
               fontWeight: FontWeight.w600,
             ),
             children: [
-              TextSpan(text: "Gas Volume".toLocalize),
+              TextSpan(text: AppLocalizations.of(context).gas_volume_title),
               const TextSpan(text: " ("),
               const TextSpan(text: "m³"),
               const TextSpan(text: ")"),

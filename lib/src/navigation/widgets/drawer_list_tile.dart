@@ -7,13 +7,13 @@ class DrawerListTile extends StatelessWidget {
   const DrawerListTile({
     super.key,
     required this.onTap,
-    required this.data,
+    required this.item,
     required this.isSelected,
     this.isEnabled = true,
   });
 
   final VoidCallback onTap;
-  final DrawerItem data;
+  final DrawerItem item;
   final bool isSelected;
   final bool isEnabled;
 
@@ -23,12 +23,12 @@ class DrawerListTile extends StatelessWidget {
         ? ListTile(
             onTap: isSelected ? null : onTap,
             leading: Icon(
-              data.icon,
+              item.icon,
               color: Colors.white,
               fill: 1.0,
             ),
             title: Text(
-              data.title,
+              item.screen.localizedTitle(context),
               style: const TextStyle(color: Colors.white),
             ),
             selected: isSelected,
@@ -37,12 +37,12 @@ class DrawerListTile extends StatelessWidget {
         : ListTile(
             onTap: null,
             leading: Icon(
-              data.icon,
+              item.icon,
               color: Colors.grey[300],
               fill: 1.0,
             ),
             title: Text(
-              data.title,
+              item.screen.localizedTitle(context),
               style: TextStyle(color: Colors.grey[300]),
             ),
             trailing: const Icon(

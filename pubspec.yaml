@@ -10,6 +10,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
 
   cupertino_icons: ^1.0.6
   material_symbols_icons: ^4.2719.3
@@ -19,11 +21,13 @@ dependencies:
   # Functional Programming types & patterns
   fpdart: ^1.1.0
   # Date Formatting
-  intl: ^0.19.0
+  intl: ^0.18.1
   # Local Database
   isar: ^3.1.0+1
   isar_flutter_libs: ^3.1.0+1
   path_provider: ^2.1.2
+
+  shared_preferences: ^2.2.2
 
   # Launch urls for browser and email
   url_launcher: ^6.2.5
@@ -48,6 +52,7 @@ dev_dependencies:
   mocktail: ^1.0.3
 
 flutter:
+  generate: true
   uses-material-design: true
 
   assets:

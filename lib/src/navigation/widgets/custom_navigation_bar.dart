@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../core/constants/constants.dart';
-import '../../core/utils/utils.dart';
 import '../data/navigation_controller.dart';
 import '../data/navigation_state.dart';
 import '../data/providers.dart';
@@ -44,7 +43,7 @@ class CustomNavigationBar extends ConsumerWidget {
                 tab.icon,
                 color: AppConstants.lightBlue,
               ),
-              label: tab.name.capitalized,
+              label: tab.localizedTitle(context),
             ),
           )
           .toList(),

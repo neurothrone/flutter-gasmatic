@@ -7,46 +7,46 @@ class AppSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
+        const Text(
           AppConstants.appTitle,
           style: TextStyle(
             color: Colors.white70,
             fontWeight: FontWeight.bold,
           ),
         ),
-        Divider(height: 1),
-        SizedBox(height: AppSizes.s10),
+        const Divider(height: 1),
+        const SizedBox(height: AppSizes.s10),
         Row(
           children: [
             SizedBox(
               width: 80,
               child: Text(
-                "Version",
-                style: TextStyle(
+                AppLocalizations.of(context).version_label,
+                style: const TextStyle(
                   color: Colors.white60,
                 ),
               ),
             ),
             // Text("Version"),
-            Text("1.0"),
+            const Text("1.0"),
           ],
         ),
-        SizedBox(height: AppSizes.s10),
+        const SizedBox(height: AppSizes.s10),
         Row(
           children: [
             SizedBox(
               width: 80,
               child: Text(
-                "Developer",
-                style: TextStyle(
+                AppLocalizations.of(context).developer_label,
+                style: const TextStyle(
                   color: Colors.white60,
                 ),
               ),
             ),
-            Text("Zane Neurothrone"),
+            const Text("Zane Neurothrone"),
           ],
         ),
       ],

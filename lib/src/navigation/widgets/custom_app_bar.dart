@@ -14,7 +14,7 @@ class CustomAppBar extends ConsumerWidget implements PreferredSizeWidget {
       navigationControllerProvider,
     );
     return AppBar(
-      title: Text(navigationState.selectedScreen.title()),
+      title: Text(navigationState.selectedScreen.localizedTitle(context)),
     );
   }
 
