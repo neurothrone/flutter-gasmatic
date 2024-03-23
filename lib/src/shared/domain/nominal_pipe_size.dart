@@ -1,0 +1,61 @@
+enum NominalPipeSize {
+  twenty,
+  twentyFive,
+  thirtyTwo,
+  forty,
+  fifty,
+  sixtyFive,
+  eighty,
+  ninety,
+  hundred,
+  hundredFifteen,
+  hundredTwentyFive,
+  hundredFifty,
+  twoHundred,
+  twoHundredFifty,
+  threeHundred,
+  threeHundredFifty,
+  fourHundred;
+
+  String get label => "$nps - $dn";
+
+  String get nps => switch (this) {
+        twenty => "3⁄4",
+        twentyFive => "1",
+        thirtyTwo => "1 1⁄4",
+        forty => "1 1⁄2",
+        fifty => "2",
+        sixtyFive => "2 1⁄2",
+        eighty => "3",
+        ninety => "3 1⁄2",
+        hundred => "4",
+        hundredFifteen => "4 1⁄2",
+        hundredTwentyFive => "5",
+        hundredFifty => "6",
+        twoHundred => "8",
+        twoHundredFifty => "10",
+        threeHundred => "12",
+        threeHundredFifty => "14",
+        fourHundred => "16",
+      };
+
+  int get dn => switch (this) {
+        twenty => 20,
+        twentyFive => 25,
+        thirtyTwo => 32,
+        forty => 40,
+        fifty => 50,
+        sixtyFive => 65,
+        eighty => 80,
+        ninety => 90,
+        hundred => 100,
+        hundredFifteen => 115,
+        hundredTwentyFive => 125,
+        hundredFifty => 150,
+        twoHundred => 200,
+        twoHundredFifty => 250,
+        threeHundred => 300,
+        threeHundredFifty => 350,
+        fourHundred => 400,
+      };
+}

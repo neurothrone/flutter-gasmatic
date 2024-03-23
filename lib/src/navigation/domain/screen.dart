@@ -12,7 +12,7 @@ enum Screen {
       };
 
   String title() => switch (index) {
-        0 => "Gas",
+        0 => "Gas Volume",
         1 => "Effect",
         2 => "About",
         _ => "Settings",
