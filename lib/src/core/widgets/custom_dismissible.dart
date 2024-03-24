@@ -34,11 +34,11 @@ class _CustomDismissibleState extends State<CustomDismissible> {
         children: [
           Container(
             margin: const EdgeInsets.all(0.5),
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.all(
+            decoration: BoxDecoration(
+              borderRadius: const BorderRadius.all(
                 Radius.circular(AppDimensions.borderRadius),
               ),
-              color: Colors.redAccent,
+              color: AppConstants.destructive,
             ),
           ),
           Stack(

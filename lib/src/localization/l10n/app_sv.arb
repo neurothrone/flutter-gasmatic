@@ -32,5 +32,8 @@
   "nps_standards_subtitle": "Detta öppnar en webbläsare",
   "data_header": "Data",
   "delete_data_title": "Radera all data",
-  "delete_data_subtitle": "Detta tar dig till nästa steg"
+  "delete_data_subtitle": "Detta tar dig till nästa steg",
+  "delete_data_warning": "Är du säker? Detta kommer att radera all din data på enheten.",
+  "delete_data_info": "Växla omkopplaren för att aktivera knappen",
+  "delete_snackbar_message": "Din data har raderats"
 }

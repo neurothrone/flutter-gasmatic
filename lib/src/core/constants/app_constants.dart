@@ -32,7 +32,8 @@ class AppConstants {
   /// Represents a color used for destructive actions.
   /// Chosen to be closer to "indian-red" in order to provide good contrast
   /// against black backgrounds and harmonize with a blue color theme
-  static const Color destructive = Color(0xFFCD5C5C);
+  // static const Color destructive = Color(0xFFCD5C5C);
+  static final Color destructive = Colors.deepOrange.shade900;
 
   /// A linear gradient of the Primary Blue and Secondary Blue colors
   static const LinearGradient primaryGradient = LinearGradient(

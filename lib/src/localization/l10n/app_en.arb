@@ -34,5 +34,8 @@
   "nps_standards_subtitle": "This will open a browser",
   "data_header": "Data",
   "delete_data_title": "Delete All Data",
-  "delete_data_subtitle": "This will take you to the next step"
+  "delete_data_subtitle": "This will take you to the next step",
+  "delete_data_warning": "Are you sure? This will delete all of your data on the device.",
+  "delete_data_info": "Toggle the switch to enable the button",
+  "delete_snackbar_message": "Your data has been deleted"
 }

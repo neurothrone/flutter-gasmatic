@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/constants/constants.dart';
-import '../../../../shared/widgets/widgets.dart';
+import '../../../../../core/constants/constants.dart';
+import '../../../../../shared/widgets/widgets.dart';
+import 'delete_data_sheet.dart';
 
 class DataSection extends StatelessWidget {
   const DataSection({super.key});
@@ -20,11 +21,21 @@ class DataSection extends StatelessWidget {
         ),
         const Divider(height: 1),
         CustomListTile(
-          onPressed: () {},
+          onPressed: () {
+            showModalBottomSheet(
+              showDragHandle: true,
+              backgroundColor: AppConstants.darkestBlue,
+              elevation: AppDimensions.elevation,
+              context: context,
+              builder: (context) {
+                return const DeleteDataSheet();
+              },
+            );
+          },
           title: AppLocalizations.of(context).delete_data_title,
           subtitle: AppLocalizations.of(context).delete_data_subtitle,
           icon: Icons.folder_delete_rounded,
-          iconColor: Colors.redAccent,
+          iconColor: AppConstants.destructive,
         ),
       ],
     );

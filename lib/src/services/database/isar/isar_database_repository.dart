@@ -98,4 +98,37 @@ class IsarDatabaseRepository implements DatabaseRepository {
       );
     }
   }
+
+  @override
+  FutureEitherVoid deleteAllGasData() async {
+    try {
+      final Isar isar = await db;
+      await isar.writeTxn(() async {
+        await isar.gasVolumeCalculationIsars.clear();
+      });
+
+      return Either.right(null);
+    } catch (e, st) {
+      return Future.value(
+        Either.left(
+          Failure(e.toString(), st),
+        ),
+      );
+    }
+  }
+
+  @override
+  FutureEitherVoid deleteAllData() async {
+    try {
+      await deleteAllGasData();
+
+      return Either.right(null);
+    } catch (e, st) {
+      return Future.value(
+        Either.left(
+          Failure(e.toString(), st),
+        ),
+      );
+    }
+  }
 }
