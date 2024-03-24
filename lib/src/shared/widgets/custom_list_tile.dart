@@ -27,7 +27,10 @@ class CustomListTile extends StatelessWidget {
         horizontal: horizontalPadding,
       ),
       title: Text(title),
-      subtitle: Text(subtitle),
+      subtitle: Text(
+        subtitle,
+        style: const TextStyle(color: Colors.white70),
+      ),
       trailing: IconButton(
         onPressed: onPressed,
         iconSize: AppSizes.s44,
