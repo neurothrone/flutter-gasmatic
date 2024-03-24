@@ -33,7 +33,7 @@ class NominalPipeSizeList extends StatelessWidget {
         );
       },
       separatorBuilder: (BuildContext context, int index) {
-        return const Divider(height: AppSizes.s0, color: Colors.grey);
+        return const Divider(height: AppSizes.s0, color: Colors.white30);
       },
     );
   }
