@@ -42,8 +42,10 @@ class CustomNavigationBar extends ConsumerWidget {
               selectedIcon: Icon(
                 tab.icon,
                 color: AppConstants.lightBlue,
+
               ),
               label: tab.localizedTitle(context),
+              tooltip: "",
             ),
           )
           .toList(),
