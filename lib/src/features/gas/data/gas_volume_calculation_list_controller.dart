@@ -3,22 +3,22 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/utils/utils.dart';
-import '../../../services/database/database_repository.dart';
+import '../../../services/database/idatabase_service.dart';
 import '../../../shared/models/models.dart';
 
 class GasVolumeCalculationListController
     extends StateNotifier<AsyncValue<List<GasVolumeCalculation>>> {
   GasVolumeCalculationListController({
-    required DatabaseRepository databaseRepository,
-  })  : _databaseRepository = databaseRepository,
+    required IDatabaseService databaseService,
+  })  : _databaseService = databaseService,
         super(const AsyncValue.data([]));
 
-  final DatabaseRepository _databaseRepository;
+  final IDatabaseService _databaseService;
 
   Future<void> fetchCalculations() async {
     state = const AsyncLoading();
 
-    final result = await _databaseRepository.fetchGasVolumeCalculations();
+    final result = await _databaseService.fetch();
 
     result.fold(
       (Failure failure) {
@@ -37,7 +37,7 @@ class GasVolumeCalculationListController
   }
 
   Future<void> saveDto(GasVolumeDto dto) async {
-    final result = await _databaseRepository.insertGasVolumeDto(dto);
+    final result = await _databaseService.insert(dto);
 
     result.fold(
       (Failure failure) {
@@ -60,15 +60,16 @@ class GasVolumeCalculationListController
       currentCalculations.insert(0, calculation);
       state = AsyncData(currentCalculations);
     } catch (e, st) {
+      state = AsyncError(e, st);
+
       if (kDebugMode) {
         debugPrint("❌ -> _addCalculation(), error: $e");
       }
-      state = AsyncError(e, st);
     }
   }
 
   Future<void> deleteCalculation(GasVolumeCalculation calculation) async {
-    final result = await _databaseRepository.deleteGasVolumeCalculationById(
+    final result = await _databaseService.deleteGasVolumeCalculationById(
       calculation.id,
     );
 
@@ -91,7 +92,6 @@ class GasVolumeCalculationListController
       state.value ?? [],
     );
     currentCalculations.remove(calculation);
-
     state = AsyncData(currentCalculations);
   }
 }

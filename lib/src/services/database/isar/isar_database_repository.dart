@@ -4,11 +4,11 @@ import 'package:path_provider/path_provider.dart';
 
 import '../../../core/utils/utils.dart';
 import '../../../shared/models/models.dart';
-import '../database_repository.dart';
+import 'idatabase_repository.dart';
 import 'entities/entities.dart';
 import 'utils/utils.dart';
 
-class IsarDatabaseRepository implements DatabaseRepository {
+class IsarDatabaseRepository implements IDatabaseRepository {
   IsarDatabaseRepository() {
     db = openDatabase();
   }
@@ -33,8 +33,7 @@ class IsarDatabaseRepository implements DatabaseRepository {
   }
 
   @override
-  FutureEither<GasVolumeCalculation> insertGasVolumeDto(
-      GasVolumeDto dto) async {
+  FutureEither<GasVolumeCalculationIsar> insert(GasVolumeDto dto) async {
     final calculationIsar = GasVolumeCalculationIsarExtensions.fromDto(dto);
 
     try {
@@ -49,16 +48,11 @@ class IsarDatabaseRepository implements DatabaseRepository {
         ),
       );
     }
-
-    final calculation = GasVolumeCalculationExtensions.fromIsarModel(
-      calculationIsar,
-    );
-
-    return Either.right(calculation);
+    return Either.right(calculationIsar);
   }
 
   @override
-  FutureEither<List<GasVolumeCalculation>> fetchGasVolumeCalculations() async {
+  FutureEither<List<GasVolumeCalculationIsar>> fetch() async {
     final List<GasVolumeCalculationIsar> calculationsIsar;
 
     try {
@@ -74,11 +68,7 @@ class IsarDatabaseRepository implements DatabaseRepository {
         ),
       );
     }
-
-    final List<GasVolumeCalculation> calculations = calculationsIsar
-        .map((e) => GasVolumeCalculationExtensions.fromIsarModel(e))
-        .toList();
-    return Either.right(calculations);
+    return Either.right(calculationsIsar);
   }
 
   @override
@@ -121,7 +111,6 @@ class IsarDatabaseRepository implements DatabaseRepository {
   FutureEitherVoid deleteAllData() async {
     try {
       await deleteAllGasData();
-
       return Either.right(null);
     } catch (e, st) {
       return Future.value(

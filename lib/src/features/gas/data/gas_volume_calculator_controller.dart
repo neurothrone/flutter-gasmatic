@@ -3,17 +3,17 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../shared/domain/domain.dart';
 import '../../../shared/models/models.dart';
 import 'gas_volume_calculation_list_controller.dart';
-import 'gas_volume_service.dart';
+import 'igas_volume_service.dart';
 
 class GasVolumeCalculatorController extends StateNotifier<double> {
   GasVolumeCalculatorController({
-    required GasVolumeService gasVolumeService,
+    required IGasVolumeService gasVolumeService,
     required GasVolumeCalculationListController calculationsController,
   })  : _gasVolumeService = gasVolumeService,
         _calculationsController = calculationsController,
         super(0.0);
 
-  final GasVolumeService _gasVolumeService;
+  final IGasVolumeService _gasVolumeService;
   final GasVolumeCalculationListController _calculationsController;
 
   void calculateGasVolume({

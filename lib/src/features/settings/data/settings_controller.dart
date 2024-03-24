@@ -2,13 +2,13 @@ import '../../../services/database/database.dart';
 
 class SettingsController {
   SettingsController({
-    required DatabaseRepository databaseRepository,
-  }) : _databaseRepository = databaseRepository;
+    required IDatabaseService databaseService,
+  }) : _databaseService = databaseService;
 
-  final DatabaseRepository _databaseRepository;
+  final IDatabaseService _databaseService;
 
   Future<bool> deleteAllData() async {
-    final result = await _databaseRepository.deleteAllData();
+    final result = await _databaseService.deleteAllData();
     return result.fold(
       (failure) => false,
       (success) => true,

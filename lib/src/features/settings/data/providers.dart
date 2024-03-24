@@ -5,6 +5,6 @@ import '../../../services/providers.dart';
 import 'settings_controller.dart';
 
 final settingsControllerProvider = Provider<SettingsController>((ref) {
-  final DatabaseRepository repository = ref.read(databaseRepositoryProvider);
-  return SettingsController(databaseRepository: repository);
+  final IDatabaseService service = ref.read(databaseServiceProvider);
+  return SettingsController(databaseService: service);
 });
