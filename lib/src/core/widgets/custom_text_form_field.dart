@@ -46,6 +46,7 @@ class CustomTextFormField extends StatelessWidget {
       key: fieldKey,
       onChanged: onChanged,
       onFieldSubmitted: onFieldSubmitted,
+      onTapOutside: (_) => FocusManager.instance.primaryFocus?.unfocus(),
       controller: controller,
       focusNode: focusNode,
       textCapitalization: textCapitalization,

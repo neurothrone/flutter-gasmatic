@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 
 import '../../../../core/constants/constants.dart';
@@ -11,9 +9,6 @@ class GasVolumeCalculatorContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      keyboardDismissBehavior: Platform.isIOS
-          ? ScrollViewKeyboardDismissBehavior.onDrag
-          : ScrollViewKeyboardDismissBehavior.manual,
       padding: const EdgeInsets.all(AppSizes.s20),
       child: Padding(
         padding: EdgeInsets.only(
