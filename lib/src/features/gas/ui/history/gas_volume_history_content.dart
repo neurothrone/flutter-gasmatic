@@ -25,21 +25,23 @@ class GasVolumeHistoryContent extends ConsumerWidget {
       gasVolumeCalculationListProvider,
     );
 
-    return AsyncValueWidget(
-      value: calculationsValue,
-      data: (List<GasVolumeCalculation> calculations) {
-        if (calculations.isEmpty) {
-          return const EmptyCalculationsPlaceholder();
-        }
+    return SafeArea(
+      child: AsyncValueWidget(
+        value: calculationsValue,
+        data: (List<GasVolumeCalculation> calculations) {
+          if (calculations.isEmpty) {
+            return const EmptyCalculationsPlaceholder();
+          }
 
-        return GasVolumeCalculationsList(
-          calculations: calculations,
-          onDelete: (GasVolumeCalculation calculation) => _deleteCalculation(
-            calculation,
-            ref,
-          ),
-        );
-      },
+          return GasVolumeCalculationsList(
+            calculations: calculations,
+            onDelete: (GasVolumeCalculation calculation) => _deleteCalculation(
+              calculation,
+              ref,
+            ),
+          );
+        },
+      ),
     );
   }
 }

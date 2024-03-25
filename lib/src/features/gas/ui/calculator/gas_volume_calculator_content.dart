@@ -16,13 +16,15 @@ class GasVolumeCalculatorContent extends StatelessWidget {
               ? AppSizes.s20
               : AppSizes.s40,
         ),
-        child: const Column(
-          children: [
-            GasVolumeCalculatorForm(),
-            SizedBox(height: AppSizes.s20),
-            GasVolumeResult(),
-            SizedBox(height: AppSizes.s40),
-          ],
+        child: const SafeArea(
+          child: Column(
+            children: [
+              GasVolumeCalculatorForm(),
+              SizedBox(height: AppSizes.s20),
+              GasVolumeResult(),
+              SizedBox(height: AppSizes.s40),
+            ],
+          ),
         ),
       ),
     );

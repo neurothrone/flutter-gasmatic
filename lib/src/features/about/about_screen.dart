@@ -13,8 +13,8 @@ class AboutScreen extends StatelessWidget {
       appBar: CustomAppBar(),
       drawer: AppDrawer(),
       body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.all(AppSizes.s20),
+        padding: EdgeInsets.all(AppSizes.s20),
+        child: SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
