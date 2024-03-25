@@ -44,5 +44,10 @@ class AppTheme {
         TextStyle(color: AppConstants.darkGold),
       ),
     ),
+    bottomSheetTheme: const BottomSheetThemeData(
+      backgroundColor: AppConstants.darkestBlue,
+      elevation: AppDimensions.elevation,
+      showDragHandle: true
+    ),
   );
 }
