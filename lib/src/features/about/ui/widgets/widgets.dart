@@ -1,2 +1,2 @@
-export 'app_section.dart';
-export 'contact_section.dart';
+export 'app/app_section.dart';
+export 'contact/contact_section.dart';
