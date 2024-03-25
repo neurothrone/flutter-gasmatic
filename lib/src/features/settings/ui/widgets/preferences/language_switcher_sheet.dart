@@ -6,6 +6,7 @@ import '../../../../../core/constants/constants.dart';
 import '../../../../../localization/data/localization_controller.dart';
 import '../../../../../localization/data/localization_state.dart';
 import '../../../../../localization/providers.dart';
+import '../../../../../shared/widgets/widgets.dart';
 
 class LanguageSwitcherSheet extends ConsumerWidget {
   const LanguageSwitcherSheet({super.key});
@@ -20,11 +21,8 @@ class LanguageSwitcherSheet extends ConsumerWidget {
     );
 
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        backgroundColor: Colors.transparent,
-        centerTitle: true,
-        title: Text(AppLocalizations.of(context).change_language_title),
+      appBar: SheetAppBar(
+        title: AppLocalizations.of(context).change_language_title,
       ),
       body: ListView.separated(
         itemCount: localizationController.supportedLocales.length,

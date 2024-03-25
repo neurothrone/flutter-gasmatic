@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../core/constants/constants.dart';
 import '../../../../../shared/domain/domain.dart';
+import '../../../../../shared/widgets/widgets.dart';
 import 'nominal_pipe_size_list.dart';
 
 class NominalPipeSizeSheet extends StatefulWidget {
@@ -29,6 +31,9 @@ class _NominalPipeSizeSheetState extends State<NominalPipeSizeSheet> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: SheetAppBar(
+        title: AppLocalizations.of(context).nps_sheet_title,
+      ),
       body: NominalPipeSizeList(
         selectedNps: _selectedNps,
         onNpsSelected: (NominalPipeSize newSelection) {

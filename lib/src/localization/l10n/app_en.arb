@@ -16,6 +16,7 @@
   "empty_calculations_text": "No calculations yet",
   "nps": "NPS",
   "dn": "DN",
+  "nps_sheet_title": "Select Nominal Pipe Size",
   "length": "Length",
   "pressure": "Pressure",
   "calculated_date": "Calculated date",
