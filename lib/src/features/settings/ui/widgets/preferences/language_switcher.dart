@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../../../core/constants/constants.dart';
 import '../../../../../localization/data/localization_state.dart';
 import '../../../../../localization/localization.dart';
 import '../../../../../localization/providers.dart';
@@ -17,16 +16,19 @@ class LanguageSwitcher extends ConsumerWidget {
     final LocalizationState localizationState = ref.watch(
       localizationStateProvider,
     );
-
     return CustomListTile(
       onPressed: () {
         showModalBottomSheet(
-          showDragHandle: true,
-          backgroundColor: AppConstants.darkestBlue,
-          elevation: AppDimensions.elevation,
+          isScrollControlled: true,
           context: context,
           builder: (context) {
-            return const LanguageSwitcherSheet();
+            return DraggableScrollableSheet(
+              expand: false,
+              initialChildSize: 0.75,
+              builder: (_, __) {
+                return const LanguageSwitcherSheet();
+              },
+            );
           },
         );
       },

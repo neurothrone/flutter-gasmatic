@@ -51,20 +51,24 @@ class _NominalPipeSizePickerState extends State<NominalPipeSizePicker> {
         suffixIcon: IconButton(
           onPressed: () {
             showModalBottomSheet(
-              showDragHandle: true,
-              backgroundColor: AppConstants.darkestBlue,
-              elevation: AppDimensions.elevation,
+              isScrollControlled: true,
               context: context,
               builder: (context) {
-                return NominalPipeSizeSheet(
-                  initialSelection: _selectedNps,
-                  onNpsSelected: (NominalPipeSize selectedNps) {
-                    widget.onNpsSelected(selectedNps);
+                return DraggableScrollableSheet(
+                  expand: false,
+                  initialChildSize: 0.75,
+                  builder: (_, __) {
+                    return NominalPipeSizeSheet(
+                      initialSelection: _selectedNps,
+                      onNpsSelected: (NominalPipeSize selectedNps) {
+                        widget.onNpsSelected(selectedNps);
 
-                    setState(() {
-                      _selectedNps = selectedNps;
-                      _controller.text = _selectedNps.label;
-                    });
+                        setState(() {
+                          _selectedNps = selectedNps;
+                          _controller.text = _selectedNps.label;
+                        });
+                      },
+                    );
                   },
                 );
               },
