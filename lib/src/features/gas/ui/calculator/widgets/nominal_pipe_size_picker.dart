@@ -74,6 +74,7 @@ class _NominalPipeSizePickerState extends State<NominalPipeSizePicker> {
               },
             );
           },
+          tooltip: AppLocalizations.of(context).nps_button_tooltip,
           icon: const Icon(
             Icons.change_circle_rounded,
             color: AppConstants.darkGold,

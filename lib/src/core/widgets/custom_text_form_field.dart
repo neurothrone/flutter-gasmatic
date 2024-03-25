@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../localization/localization.dart';
 import '../constants/constants.dart';
 
 class CustomTextFormField extends StatelessWidget {
@@ -69,6 +70,7 @@ class CustomTextFormField extends StatelessWidget {
                   Icons.clear,
                   color: AppConstants.darkGold,
                 ),
+                tooltip: AppLocalizations.of(context).clear_button_tooltip,
               )
             : null,
         filled: filled,
