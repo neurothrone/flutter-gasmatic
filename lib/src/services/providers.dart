@@ -1,9 +1,14 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'app_info/app_info.dart';
 import 'database/database.dart';
 import 'database/isar/isar.dart';
 import 'env/env.dart';
 import 'launcher/launcher.dart';
+
+final appInfoServiceProvider = Provider<IAppInfoService>((ref) {
+  return AppInfoService();
+});
 
 final databaseRepositoryProvider = Provider<IDatabaseRepository>((ref) {
   return IsarDatabaseRepository();
