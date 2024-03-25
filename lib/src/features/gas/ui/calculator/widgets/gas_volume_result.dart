@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../../core/constants/constants.dart';
+import '../../../../../localization/localization.dart';
 import '../../../data/providers.dart';
 
 class GasVolumeResult extends StatelessWidget {

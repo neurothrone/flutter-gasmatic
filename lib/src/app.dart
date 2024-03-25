@@ -10,6 +10,7 @@ import 'features/gas/ui/gas_screen.dart';
 import 'features/settings/settings_screen.dart';
 import 'localization/data/localization_controller.dart';
 import 'localization/data/localization_state.dart';
+import 'localization/localization.dart';
 import 'localization/providers.dart';
 import 'navigation/data/navigation_state.dart';
 import 'navigation/data/providers.dart';

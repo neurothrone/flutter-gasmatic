@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/constants/constants.dart';
 import '../../../../../core/utils/utils.dart';
+import '../../../../../localization/localization.dart';
 import '../../../../../shared/models/models.dart';
 import 'gas_volume_history_card_row.dart';
 

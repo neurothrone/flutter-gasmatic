@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../core/constants/constants.dart';
+import '../../localization/localization.dart';
 
 enum ScreenTab {
   calculator,

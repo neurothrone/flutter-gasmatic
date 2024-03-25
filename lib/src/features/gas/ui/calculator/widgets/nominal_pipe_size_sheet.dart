@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/constants/constants.dart';
+import '../../../../../localization/localization.dart';
 import '../../../../../shared/domain/domain.dart';
 import '../../../../../shared/widgets/widgets.dart';
 import 'nominal_pipe_size_list.dart';

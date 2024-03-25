@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-import '../../core/constants/constants.dart';
+import '../../localization/localization.dart';
 
 enum Screen {
   gas,

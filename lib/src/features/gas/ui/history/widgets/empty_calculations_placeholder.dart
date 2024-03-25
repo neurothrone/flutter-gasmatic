@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/constants/constants.dart';
+import '../../../../../localization/localization.dart';
 
 class EmptyCalculationsPlaceholder extends StatelessWidget {
   const EmptyCalculationsPlaceholder({

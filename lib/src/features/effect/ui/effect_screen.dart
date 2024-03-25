@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../core/constants/constants.dart';
+import '../../../localization/localization.dart';
 import '../../../navigation/data/navigation_state.dart';
 import '../../../navigation/data/providers.dart';
 import '../../../navigation/domain/domain.dart';

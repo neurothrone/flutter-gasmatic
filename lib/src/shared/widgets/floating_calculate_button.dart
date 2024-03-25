@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/constants/constants.dart';
+import '../../localization/localization.dart';
 
 class FloatingCalculateButton extends StatelessWidget {
   const FloatingCalculateButton({
