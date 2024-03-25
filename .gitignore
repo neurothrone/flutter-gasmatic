@@ -44,3 +44,6 @@ app.*.map.json
 
 # Environment
 .env
+
+# Development
+requirements.md
