@@ -22,12 +22,16 @@ dependencies:
   fpdart: ^1.1.0
   # Date Formatting
   intl: ^0.18.1
+
+  # !: Storage
   # Local Database
   isar: ^3.1.0+1
   isar_flutter_libs: ^3.1.0+1
   path_provider: ^2.1.2
 
   shared_preferences: ^2.2.2
+
+  package_info_plus: ^6.0.0
 
   # Launch urls for browser and email
   url_launcher: ^6.2.5
