@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../../core/constants/constants.dart';
+import '../../../../../core/utils/utils.dart';
 import '../../../../../localization/data/localization_controller.dart';
 import '../../../../../localization/data/localization_state.dart';
 import '../../../../../localization/localization.dart';
@@ -34,7 +35,7 @@ class LanguageSwitcherSheet extends ConsumerWidget {
             onTap: () {
               localizationController.changeLocaleTo(locale);
             },
-            title: Text(locale.toString()),
+            title: Text(locale.toReadableString(context)),
             trailing: locale == localizationState.currentLocale
                 ? const Icon(
                     Icons.check_circle_outline_rounded,

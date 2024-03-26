@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../../../core/utils/utils.dart';
 import '../../../../../localization/data/localization_state.dart';
 import '../../../../../localization/localization.dart';
 import '../../../../../localization/providers.dart';
@@ -33,7 +34,7 @@ class LanguageSwitcher extends ConsumerWidget {
         );
       },
       title: AppLocalizations.of(context).change_language_title,
-      subtitle: localizationState.currentLocale.toString(),
+      subtitle: localizationState.currentLocale.toReadableString(context),
       icon: Icons.language_rounded,
     );
   }
