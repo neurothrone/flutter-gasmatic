@@ -49,6 +49,8 @@ dev_dependencies:
   isar_generator: ^3.1.0+1
   build_runner: ^2.4.8
 
+  icons_launcher: ^2.1.7
+
   # Command-line tool for updating Android & iOS splash screen
   flutter_native_splash: ^2.4.0
 
@@ -61,3 +63,21 @@ flutter:
 
   assets:
     - assets/env/.env
+
+icons_launcher:
+  image_path: "assets/img/app_icon.png"
+  platforms:
+    android:
+      enable: true
+      adaptive_background_image: "assets/img/app_icon_bg.png"
+      adaptive_foreground_image: "assets/img/app_icon_fg.png"
+    ios:
+      enable: true
+    web:
+      enable: false
+    macos:
+      enable: true
+    windows:
+      enable: true
+    linux:
+      enable: true
