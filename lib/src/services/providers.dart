@@ -5,6 +5,7 @@ import 'database/database.dart';
 import 'database/isar/isar.dart';
 import 'env/env.dart';
 import 'launcher/launcher.dart';
+import 'preferences/preferences.dart';
 
 final appInfoServiceProvider = Provider<IAppInfoService>((ref) {
   return AppInfoService();
@@ -26,4 +27,9 @@ final envServiceProvider = Provider.autoDispose<IEnvService>((ref) {
 final launcherServiceProvider = Provider.autoDispose<ILauncherService>((ref) {
   final IEnvService envService = ref.read(envServiceProvider);
   return LauncherService(dotEnvService: envService);
+});
+
+final preferencesServiceProvider =
+    Provider.autoDispose<IPreferencesService>((ref) {
+  return PreferencesService();
 });
