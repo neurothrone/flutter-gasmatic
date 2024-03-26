@@ -31,6 +31,8 @@
   "support_subtitle": "This will open the default email app",
   "linkedin_title": "LinkedIn",
   "linkedin_subtitle": "This will open a browser",
+  "credits_header": "Credits",
+  "app_icon_credit": "App icon made by Freepik from www.flaticon.com.",
   "preferences_header": "Preferences",
   "change_language_title": "Change Language",
   "nps_standards_title": "Learn more about NPS standards",

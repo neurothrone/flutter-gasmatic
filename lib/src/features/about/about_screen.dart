@@ -21,6 +21,8 @@ class AboutScreen extends StatelessWidget {
               AppSection(),
               SizedBox(height: AppSizes.s20),
               ContactSection(),
+              SizedBox(height: AppSizes.s20),
+              CreditsSection(),
             ],
           ),
         ),
