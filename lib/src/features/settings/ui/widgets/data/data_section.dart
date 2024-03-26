@@ -24,12 +24,16 @@ class DataSection extends StatelessWidget {
         CustomListTile(
           onPressed: () {
             showModalBottomSheet(
-              showDragHandle: true,
-              backgroundColor: AppConstants.darkestBlue,
-              elevation: AppDimensions.elevation,
+              isScrollControlled: true,
               context: context,
               builder: (context) {
-                return const DeleteDataSheet();
+                return DraggableScrollableSheet(
+                  expand: false,
+                  initialChildSize: 0.75,
+                  builder: (_, __) {
+                    return const DeleteDataSheet();
+                  },
+                );
               },
             );
           },

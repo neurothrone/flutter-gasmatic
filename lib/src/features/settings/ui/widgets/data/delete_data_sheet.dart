@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../../core/constants/constants.dart';
 import '../../../../../localization/localization.dart';
+import '../../../../../shared/widgets/widgets.dart';
 import '../../../data/providers.dart';
 import '../../../data/settings_controller.dart';
 import 'delete_button_switch_row.dart';
@@ -38,11 +39,9 @@ class DeleteDataSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        backgroundColor: Colors.transparent,
-        centerTitle: true,
-        title: Text(AppLocalizations.of(context).delete_data_title),
+      appBar: SheetAppBar(
+        title: AppLocalizations.of(context).delete_data_title,
+        showDivider: false,
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: AppSizes.s20),
