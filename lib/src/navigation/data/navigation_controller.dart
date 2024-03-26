@@ -15,9 +15,11 @@ class NavigationController extends StateNotifier<NavigationState> {
   Future<void> loadSavedState() async {
     final screen = await _preferencesService.getScreen();
     final gasTab = await _preferencesService.getGasTab();
+    final effectTab = await _preferencesService.getEffectTab();
     state = state.copyWith(
       selectedScreen: screen,
       selectedGasTab: gasTab,
+      selectedEffectTab: effectTab,
     );
   }
 
@@ -27,6 +29,10 @@ class NavigationController extends StateNotifier<NavigationState> {
 
   Future<void> _saveGasTab() async {
     await _preferencesService.setGasTab(state.selectedGasTab);
+  }
+
+  Future<void> _saveEffectTab() async {
+    await _preferencesService.setEffectTab(state.selectedEffectTab);
   }
 
   void navigateTo(Screen newScreen) {
@@ -46,6 +52,7 @@ class NavigationController extends StateNotifier<NavigationState> {
   void changeEffectTabTo(ScreenTab newTab) {
     if (newTab != state.selectedEffectTab) {
       state = state.copyWith(selectedEffectTab: newTab);
+      _saveEffectTab();
     }
   }
 }

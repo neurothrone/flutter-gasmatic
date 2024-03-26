@@ -11,6 +11,10 @@ abstract interface class IPreferencesService {
 
   Future<void> setGasTab(ScreenTab tab);
 
+  Future<ScreenTab> getEffectTab();
+
+  Future<void> setEffectTab(ScreenTab tab);
+
   Future<Locale> getLocale();
 
   Future<void> setLocale(Locale locale);
