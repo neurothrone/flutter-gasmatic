@@ -1,11 +1,14 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../services/localization/localization.dart';
+import '../services/preferences/preferences.dart';
+import '../services/providers.dart';
 import 'data/localization_controller.dart';
 import 'data/localization_state.dart';
 
 final localizationServiceProvider = Provider<ILocalizationService>((ref) {
-  return LocalizationService();
+  final IPreferencesService service = ref.read(preferencesServiceProvider);
+  return LocalizationService(preferencesService: service);
 });
 
 final localizationStateProvider = StateNotifierProvider.autoDispose<
