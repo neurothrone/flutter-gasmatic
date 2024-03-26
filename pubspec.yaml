@@ -81,3 +81,11 @@ icons_launcher:
       enable: true
     linux:
       enable: true
+
+flutter_native_splash:
+  color: "#000814"
+  image: "assets/img/app_icon_fg.png"
+  ios: true
+  android: true
+  android_12:
+    color: "#000814"
