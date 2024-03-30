@@ -57,12 +57,17 @@ dev_dependencies:
   # Library for creating mock objects in Dart tests
   mocktail: ^1.0.3
 
+  msix: ^3.16.7
+
 flutter:
   generate: true
   uses-material-design: true
 
   assets:
     - assets/env/.env
+
+msix_config:
+  include: msix_config.yaml
 
 icons_launcher:
   image_path: "assets/img/app_icon.png"
