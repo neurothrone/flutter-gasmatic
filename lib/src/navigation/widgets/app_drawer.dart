@@ -42,16 +42,19 @@ class AppDrawer extends ConsumerWidget {
               ),
             ),
           ),
-          for (int index = 0; index < _drawerItems.length; index++)
-            DrawerListTile(
-              onTap: () {
-                navigationController.navigateTo(Screen.fromIndex(index));
-                Navigator.pop(context);
-              },
-              item: _drawerItems[index],
-              isSelected: navigationState.selectedScreen.index == index,
-              isEnabled: index != Screen.effect.index,
-            )
+          // TODO: remove conditional once effect is implemented
+          for (int index = 0; index < _drawerItems.length; index++) ...[
+            if (index != Screen.effect.index)
+              DrawerListTile(
+                onTap: () {
+                  navigationController.navigateTo(Screen.fromIndex(index));
+                  Navigator.pop(context);
+                },
+                item: _drawerItems[index],
+                isSelected: navigationState.selectedScreen.index == index,
+                isEnabled: index != Screen.effect.index,
+              )
+          ],
         ],
       ),
     );
